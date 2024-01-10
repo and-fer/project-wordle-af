@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Input from '../Input'
+import Guesses from '../Guesses/Guesses'
 
 import { sample } from '../../utils'
 import { WORDS } from '../../data'
@@ -13,7 +13,7 @@ console.info({ answer })
 function Game() {
   return (
     <>
-      <Input />
+      <Guesses />
     </>
   )
 }
