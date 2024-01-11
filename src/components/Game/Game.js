@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Input from '../Input'
 import Guesses from '../Guesses/Guesses'
 
 import { sample } from '../../utils'
@@ -14,6 +15,7 @@ function Game() {
   return (
     <>
       <Guesses />
+      <Input />
     </>
   )
 }

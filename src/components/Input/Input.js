@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-function Input({ handleGuesses }) {
+function Input() {
   const [inputVal, setInputVal] = useState('')
 
   return (
@@ -10,7 +10,6 @@ function Input({ handleGuesses }) {
         className="guess-input-wrapper"
         onSubmit={e => {
           e.preventDefault()
-          handleGuesses(inputVal)
           setInputVal('')
         }}>
         <label htmlFor="guess-input">Enter guess:</label>
