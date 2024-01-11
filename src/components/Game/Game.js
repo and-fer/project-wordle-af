@@ -14,8 +14,8 @@ console.info({ answer })
 function Game() {
   const [guesses, setGuesses] = useState([])
 
-  function handleGuesses(setInputGuess) {
-    setGuesses([...guesses, setInputGuess])
+  function handleGuesses(inputGuess) {
+    setGuesses([...guesses, inputGuess])
   }
 
   return (

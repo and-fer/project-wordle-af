@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-
 function Guesses({ guesses }) {
   return (
     <div>
