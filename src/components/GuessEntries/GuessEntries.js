@@ -1,9 +1,7 @@
-function Guesses({ guesses }) {
+function GuessEntries({ guesses }) {
   return (
     <div>
       <div class="guess-results">
-        <p class="guess">FIRST</p>
-        <p class="guess">GUESS</p>
         {guesses.map((guess, id) => (
           <p key={id} class="guess">
             {guess}
@@ -14,4 +12,4 @@ function Guesses({ guesses }) {
   )
 }
 
-export default Guesses
+export default GuessEntries
