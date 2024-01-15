@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import Input from '../Input'
-import Guesses from '../GuessEntries/GuessEntries'
+import GuessEntries from '../GuessEntries/GuessEntries'
 
 import { sample } from '../../utils'
 import { WORDS } from '../../data'
@@ -20,7 +20,7 @@ function Game() {
 
   return (
     <>
-      <Guesses guesses={guesses} />
+      <GuessEntries guesses={guesses} />
       <Input handleGuesses={handleGuesses} />
     </>
   )
