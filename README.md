@@ -35,7 +35,7 @@ Your job in this first exercise is to create a new component for this UI, and re
 Here's a minimal representation of the markup expected to be produced by this new component:
 
 ```html
-<form class="guess-input-wrapper">
+<form className="guess-input-wrapper">
   <label for="guess-input">Enter guess:</label>
   <input id="guess-input" type="text" />
 </form>
@@ -73,9 +73,9 @@ Our goal in this exercise is to render each of the user's guesses:
 And here's an example of the expected DOM structure:
 
 ```html
-<div class="guess-results">
-  <p class="guess">FIRST</p>
-  <p class="guess">GUESS</p>
+<div className="guess-results">
+  <p className="guess">FIRST</p>
+  <p className="guess">GUESS</p>
 </div>
 ```
 
@@ -100,41 +100,41 @@ As the user submits guesses, their guess will populate the cells:
 Here's the DOM structure you'll want to create dynamically, based on the user's guesses:
 
 ```html
-<div class="guess-results">
-  <p class="guess">
-    <span class="cell">H</span>
-    <span class="cell">E</span>
-    <span class="cell">L</span>
-    <span class="cell">L</span>
-    <span class="cell">O</span>
+<div className="guess-results">
+  <p className="guess">
+    <span className="cell">H</span>
+    <span className="cell">E</span>
+    <span className="cell">L</span>
+    <span className="cell">L</span>
+    <span className="cell">O</span>
   </p>
-  <p class="guess">
-    <span class="cell">T</span>
-    <span class="cell">H</span>
-    <span class="cell">E</span>
-    <span class="cell">R</span>
-    <span class="cell">E</span>
+  <p className="guess">
+    <span className="cell">T</span>
+    <span className="cell">H</span>
+    <span className="cell">E</span>
+    <span className="cell">R</span>
+    <span className="cell">E</span>
   </p>
-  <p class="guess">
-    <span class="cell">W</span>
-    <span class="cell">O</span>
-    <span class="cell">R</span>
-    <span class="cell">L</span>
-    <span class="cell">D</span>
+  <p className="guess">
+    <span className="cell">W</span>
+    <span className="cell">O</span>
+    <span className="cell">R</span>
+    <span className="cell">L</span>
+    <span className="cell">D</span>
   </p>
-  <p class="guess">
-    <span class="cell"></span>
-    <span class="cell"></span>
-    <span class="cell"></span>
-    <span class="cell"></span>
-    <span class="cell"></span>
+  <p className="guess">
+    <span className="cell"></span>
+    <span className="cell"></span>
+    <span className="cell"></span>
+    <span className="cell"></span>
+    <span className="cell"></span>
   </p>
-  <p class="guess">
-    <span class="cell"></span>
-    <span class="cell"></span>
-    <span class="cell"></span>
-    <span class="cell"></span>
-    <span class="cell"></span>
+  <p className="guess">
+    <span className="cell"></span>
+    <span className="cell"></span>
+    <span className="cell"></span>
+    <span className="cell"></span>
+    <span className="cell"></span>
   </p>
 </div>
 ```
@@ -149,7 +149,7 @@ There are two things that should help you tackle this exercise:
 **Acceptance Criteria:**
 
 - Create a new `Guess` component. 6 instances should be rendered at all times, no matter how many guesses have been submitted.
-- The `Guess` component should render 5 spans, each with the class of `cell`.
+- The `Guess` component should render 5 spans, each with the className of `cell`.
 - Each cell should contain a letter, if the `Guess` instance has been given a value. If not, the cell should be blank.
 - Use the `NUM_OF_GUESSES_ALLOWED` constant, when needed.
 - No `key` warnings in the console.
@@ -158,7 +158,7 @@ There are two things that should help you tackle this exercise:
 
 Alright: over the first 3 exercises, we've been setting up all of the structure and scaffolding. It's time to do some game-logic stuff!
 
-In this exercise, we'll add some CSS classes to color the background of each cell, based on the results and the correct answer:
+In this exercise, we'll add some CSS classNamees to color the background of each cell, based on the results and the correct answer:
 
 ![Screen recording. The guesses are applied to the game board, and the background colors update accordingly](docs/words-with-backgrounds.gif)
 
@@ -167,7 +167,7 @@ Inside `/src/game-helpers.js`, you'll find a helper function, `checkGuess`. As p
 For example:
 
 ```js
-checkGuess('WHALE', 'LEARN');
+checkGuess('WHALE', 'LEARN')
 /*
   Returns:
 
@@ -189,17 +189,17 @@ There are 3 possible statuses:
 
 In the example above, `W` and `H` aren't found in the word `LEARN`, and so they're marked as “incorrect”. `A` is correct, since it's in the 3rd slot in each word. The other two letters, `L` and `E`, are meant to be in other slots.
 
-**These statuses correspond with CSS classes.** The `correct` status has a `correct` class name, which will apply the green background when applied to a cell. Same thing for `misplaced` and `incorrect`.
+**These statuses correspond with CSS classNamees.** The `correct` status has a `correct` className name, which will apply the green background when applied to a cell. Same thing for `misplaced` and `incorrect`.
 
-Your task is to use this function to validate the user's guesses, and apply the correct CSS classes. The final output for a given guess should look like this:
+Your task is to use this function to validate the user's guesses, and apply the correct CSS classNamees. The final output for a given guess should look like this:
 
 ```html
-<p class="guess">
-  <span class="cell incorrect">W</span>
-  <span class="cell incorrect">H</span>
-  <span class="cell correct">A</span>
-  <span class="cell misplaced">L</span>
-  <span class="cell misplaced">E</span>
+<p className="guess">
+  <span className="cell incorrect">W</span>
+  <span className="cell incorrect">H</span>
+  <span className="cell correct">A</span>
+  <span className="cell misplaced">L</span>
+  <span className="cell misplaced">E</span>
 </p>
 ```
 
@@ -207,7 +207,7 @@ Your task is to use this function to validate the user's guesses, and apply the 
 
 - Import the `checkGuess` function from `/src/game-helpers.js`, and use it to validate each of the user's guesses
 - When rendering the letters in the `Guess` component, apply the letter's `status` to the `cell` element.
-- "Empty" guess slots should have the same markup as before: `<span class="cell"></span>`.
+- "Empty" guess slots should have the same markup as before: `<span className="cell"></span>`.
 
 ## Exercise 5: winning and losing
 
@@ -224,16 +224,13 @@ If the user loses the game, by contrast, a sad banner should be shown:
 The user wins the game when their guessed word is identical to the `answer`. They lose the game if they submit 6 guesses without winning.
 
 ```html
-<div class="happy banner">
-  <p>
-    <strong>Congratulations!</strong> Got it in
-    <strong>3 guesses</strong>.
-  </p>
+<div className="happy banner">
+  <p><strong>Congratulations!</strong> Got it in <strong>3 guesses</strong>.</p>
 </div>
 ```
 
 ```html
-<div class="sad banner">
+<div className="sad banner">
   <p>Sorry, the correct answer is <strong>LEARN</strong>.</p>
 </div>
 ```
