@@ -2,11 +2,13 @@ import React from 'react'
 import { range } from '../../utils'
 import { checkGuess } from '../../game-helpers'
 
-function Guess({ guess }) {
+function Guess({ guess, answer }) {
   function classNameStatus(num) {
-    let userLetter = checkGuess(guess, 'WALLO')
+    let userLetter = checkGuess(guess, answer)
     const baseClass = 'cell'
     let statusClass = ''
+
+    console.log(answer)
 
     if (userLetter === null) {
       return baseClass
