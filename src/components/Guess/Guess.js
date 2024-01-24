@@ -2,7 +2,7 @@ import React from 'react'
 import { range } from '../../utils'
 import { checkGuess } from '../../game-helpers'
 
-function Guess({ guess }) {
+function Guess({ guess, answer }) {
   function classNameStatus(num) {
     let userLetter = checkGuess(guess, 'WALLO')
     const baseClass = 'cell'
