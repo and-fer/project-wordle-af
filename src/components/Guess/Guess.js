@@ -3,38 +3,24 @@ import { range } from '../../utils'
 import { checkGuess } from '../../game-helpers'
 
 function Guess({ guess, answer }) {
-  function classNameStatus(num) {
-    let userLetter = checkGuess(guess, answer)
-    const baseClass = 'cell'
-    let statusClass = ''
+  function Cell({ letter, status }) {
+    const className = guess ? `cell ${status}` : 'cell'
 
-    console.log(answer)
-
-    if (userLetter === null) {
-      return baseClass
-    }
-
-    if (userLetter[num].status === 'correct') {
-      statusClass = 'correct'
-    }
-    if (userLetter[num].status === 'misplaced') {
-      statusClass = 'misplaced'
-    }
-    if (userLetter[num].status === 'incorrect') {
-      statusClass = 'incorrect'
-    }
-
-    return `${baseClass} ${statusClass}`
+    return <span className={className}>{letter}</span>
   }
+
+  const guessStatus = checkGuess(guess, answer)
 
   return (
     <div>
       <p className="guess">
         {range(5).map(numCol => {
           return (
-            <span key={numCol} className={classNameStatus(numCol)}>
-              {guess ? guess[numCol] : undefined}
-            </span>
+            <Cell
+              key={numCol}
+              letter={guessStatus ? guessStatus[numCol].letter : undefined}
+              status={guessStatus ? guessStatus[numCol].status : undefined}
+            />
           )
         })}
       </p>
